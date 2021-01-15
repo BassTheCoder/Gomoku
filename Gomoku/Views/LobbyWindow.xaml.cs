@@ -13,7 +13,7 @@ namespace Gomoku.Views
         public LobbyWindow()
         {
             InitializeComponent();
-            _gameViewModel = new GameViewModel();            
+            _gameViewModel = new GameViewModel();
             DataContext = _gameViewModel;
         }
 
@@ -32,29 +32,37 @@ namespace Gomoku.Views
         {
             if (Player1Name.Text != "" && Player2Name.Text != "")
             {
-                this.Close();
-                GameWindow gameWindow = new GameWindow(_gameViewModel);
-                _gameViewModel.LoadPlayers();
-                gameWindow.ShowDialog();
+                if (Player1Name.Text != Player2Name.Text)
+                {
+                    this.Close();
+                    GameWindow gameWindow = new GameWindow(_gameViewModel);
+                    _gameViewModel.LoadPlayers();
+                    gameWindow.ShowDialog();
+                }
+                else
+                {
+                    Player1ErrorCase.Text = "Players can't have the same names!";
+                    Player2ErrorCase.Text = "Players can't have the same names!";
+                }
             }
             else
             {
-                 if (Player1Name.Text == "")
-                 {
-                     Player1NullCase.Text = "Enter Player 1 name!";
-                 }
-                 else
-                 {
-                     Player1NullCase.Text = "";
-                 }
-                 if (Player2Name.Text == "")
-                 {
-                     Player2NullCase.Text = "Enter Player 2 name!";
-                 }
-                 else
-                 {
-                     Player2NullCase.Text = "";
-                 }
+                if (Player1Name.Text == "")
+                {
+                    Player1ErrorCase.Text = "Enter Player 1 name!";
+                }
+                else
+                {
+                    Player1ErrorCase.Text = "";
+                }
+                if (Player2Name.Text == "")
+                {
+                    Player2ErrorCase.Text = "Enter Player 2 name!";
+                }
+                else
+                {
+                    Player2ErrorCase.Text = "";
+                }
             }
         }
     }
