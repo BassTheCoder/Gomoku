@@ -1,0 +1,71 @@
+﻿<Window x:Class="Gomoku.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gomoku.Views"
+        mc:Ignorable="d"
+        Title="Gomoku" Height="600" Width="800"
+        Background = "Cornsilk" >
+    <StackPanel VerticalAlignment="Center">
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                Width="300"
+                Height="80"
+                Margin="0,0,0,50"
+                FontSize="50"
+                TextAlignment="Center"
+                FontWeight="DemiBold"
+                FontStyle="Oblique">
+                Gomoku
+            </TextBlock>
+                
+            <Button
+                Grid.Row="1"
+                Width="300"
+                Height="50"
+                Margin="0,10,0,10"
+                FontSize="30"
+                Click="NG_Button_Click">
+                New Game
+            </Button>
+            <Button
+                Grid.Row="2"
+                Width="300"
+                Height="50"
+                Margin="0,10,0,10"
+                FontSize="30"
+                Click="Stats_Button_Click">
+                Player Statistics
+            </Button>
+            <Button
+                Grid.Row="3"
+                Width="300"
+                Height="50"
+                Margin="0,10,0,10"
+                FontSize="30"
+                Click="Rules_Button_Click">
+                Rules
+            </Button>
+            <Button
+                Grid.Row="4"
+                Width="300"
+                Height="50"
+                Margin="0,10,0,10"
+                FontSize="30"
+                Click="Exit_Button_Click">
+                Exit
+            </Button>
+        </Grid>
+    </StackPanel>
+
+</Window>

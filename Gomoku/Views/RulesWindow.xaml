@@ -1,0 +1,47 @@
+﻿<Window x:Class="Gomoku.Views.RulesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gomoku.Views"
+        mc:Ignorable="d"
+        Background="Cornsilk"
+        Title="Gomoku - Rules" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                FontSize="40"
+                FontWeight="Heavy">
+                Gomoku Rules
+            </TextBlock>
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="30"
+                FontStyle="Italic">
+                Five in a row
+            </TextBlock>
+            <TextBlock
+                Margin="10,50,0,0"
+                FontSize="20"
+                FontWeight="Medium">
+                1. There are 2 players. <LineBreak/>
+                2. Each player represents one of 2 colors - black or white. <LineBreak/>
+                3. The game runs on a 15x15 board. <LineBreak/>
+                4. Players alternate turns placing a stone of their color on an empty field. <LineBreak/>
+                5. The winner is the first player to form an unbroken chain of five or more stones <LineBreak/>
+                horizontally, vertically or diagonally
+            </TextBlock>
+            <Button
+                Width="100"
+                Height="30"
+                FontSize="20"
+                Margin="0,40,0,0"
+                Click="Rules_Close_Button_Click">
+                Close
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
