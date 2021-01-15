@@ -1,5 +1,4 @@
-﻿using Gomoku.Helpers;
-using Gomoku.Models;
+﻿using Gomoku.Models;
 using Gomoku.Services;
 using PropertyChanged;
 
@@ -13,8 +12,6 @@ namespace Gomoku.ViewModels
         public string CurrentPlayerName { get; set; }
         public string Player1Name { get => _gameService.Player1.Name; set => _gameService.Player1.Name = value; }
         public string Player2Name { get => _gameService.Player2.Name; set => _gameService.Player2.Name = value; }
-
-
 
         public GameViewModel()
         {

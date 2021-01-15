@@ -1,7 +1,6 @@
 ﻿using Gomoku.Helpers;
 using Gomoku.Models;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace Gomoku.Services

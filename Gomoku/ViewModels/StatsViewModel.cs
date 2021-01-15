@@ -1,10 +1,6 @@
 ﻿using Gomoku.Models;
 using Gomoku.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using PropertyChanged;
 
 namespace Gomoku.ViewModels
 {
