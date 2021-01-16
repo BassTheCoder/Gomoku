@@ -13,10 +13,13 @@ namespace Gomoku.ViewModels
         {            
             _dataBaseManager = new DataBaseManager();
             PlayersCollection = new ObservableCollection<Player>();
-
-            foreach (Player player in _dataBaseManager.ReadFromFile())
+            var playersList = _dataBaseManager.ReadFromFile();
+            if (playersList != null)
             {
-                PlayersCollection.Add(player);
+                foreach (Player player in playersList)
+                {
+                    PlayersCollection.Add(player);
+                }
             }
         }
     }

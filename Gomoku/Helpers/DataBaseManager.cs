@@ -32,10 +32,17 @@ namespace Gomoku.Helpers
 
         public List<Player> ReadFromFile()
         {
-            using StreamReader playersStreamReader = new StreamReader(filePath + "\\" + playersListFileName);
-            string playersJson = playersStreamReader.ReadToEnd();
-            playersList = JsonSerializer.Deserialize<List<Player>>(playersJson);
-            return playersList;
+            try
+            {
+                using StreamReader playersStreamReader = new StreamReader(filePath + "\\" + playersListFileName);
+                string playersJson = playersStreamReader.ReadToEnd();
+                playersList = JsonSerializer.Deserialize<List<Player>>(playersJson);
+                return playersList;
+            }
+            catch(Exception)
+            {
+                return playersList;
+            }
         }
 
         public void UpdateOrCreatePlayer(Player player)
