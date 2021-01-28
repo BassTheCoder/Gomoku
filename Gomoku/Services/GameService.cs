@@ -7,15 +7,16 @@ namespace Gomoku.Services
 {
     class GameService
     {
-        private GameBoard _gameBoard = new GameBoard();
+        private readonly GameBoard _gameBoard = new GameBoard();
 
         private readonly DataBaseManager _dataBaseManager;
         public Player Player1 { get; set; } = new Player() { PlayerId = PlayerId.Player1, Color = "#ffffff" };
         public Player Player2 { get; set; } = new Player() { PlayerId = PlayerId.Player2, Color = "#000000" };
 
         public Player currentPlayer;
-        
-        public int TurnCounter { get; set; }
+
+        public int TurnCounter { get; set; } = 1;
+
         public const int LastTurn = 225;
         public string ButtonTextColor { get; set; } = "#000000";
 

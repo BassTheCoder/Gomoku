@@ -7,8 +7,6 @@ namespace Gomoku.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public bool RulesActive = false;
-
         public MainWindow()
         {
             InitializeComponent();
