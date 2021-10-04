@@ -1,15 +1,11 @@
-﻿using Gomoku.Helpers;
-
-namespace Gomoku.Models
+﻿namespace Gomoku.Models
 {
     public class TurnResponse
     {
         public bool IsGameFinished { get; set; }
         public bool IsGameTied { get; set; }
-        public PlayerId CurrentPlayer { get; set; }
-        public PlayerId NextPlayer { get; set; }
-        public string Color { get; set; }
-        public string ButtonText { get; set; }
-        public string ButtonTextColor { get; set; }
+        public int CurrentPlayerId { get; set; }
+        public int NextPlayerId { get; set; }
+        public string TurnCountAsText { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace Gomoku.ViewModels
     public class GameViewModel
     {
         private readonly GameService _gameService;
+
         public string ButtonName { get; set; }
         public string CurrentPlayerName { get; set; }
         public string Player1Name { get => _gameService.Player1.Name; set => _gameService.Player1.Name = value; }
@@ -16,7 +17,7 @@ namespace Gomoku.ViewModels
         public GameViewModel()
         {
             _gameService = new GameService();
-            CurrentPlayerName = _gameService.Player1.Name;
+            CurrentPlayerName = _gameService.CurrentPlayer.Name;
         }
 
         public void LoadPlayers()
@@ -26,25 +27,21 @@ namespace Gomoku.ViewModels
 
         public TurnResponse SendAction(int row, int column)
         {
-            var turnResponse = _gameService.UpdateBoardState(row, column);
+            _gameService.UpdateBoardState(row, column);
 
-            if (_gameService.Player1.PlayerId == turnResponse.CurrentPlayer)
+            var turnResponse = _gameService.GetTurnResponse();
+
+            if (!turnResponse.IsGameFinished)
             {
-                if (!turnResponse.IsGameFinished)
+                if (turnResponse.CurrentPlayerId == _gameService.Player1.Id)
                 {
                     CurrentPlayerName = _gameService.Player2.Name;
                 }
-                turnResponse.Color = _gameService.Player2.Color;
-            }
-            else
-            {
-                if (!turnResponse.IsGameFinished)
+                else
                 {
                     CurrentPlayerName = _gameService.Player1.Name;
                 }
-                turnResponse.Color = _gameService.Player1.Color;
             }
-
             return turnResponse;
         }
     }

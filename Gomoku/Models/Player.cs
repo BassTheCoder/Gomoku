@@ -1,5 +1,4 @@
-﻿using Gomoku.Helpers;
-using PropertyChanged;
+﻿using PropertyChanged;
 using System.Text.Json.Serialization;
 
 namespace Gomoku.Models
@@ -8,9 +7,7 @@ namespace Gomoku.Models
     public class Player
     {
         [JsonIgnore]
-        public PlayerId PlayerId { get; set; }
-        [JsonIgnore]
-        public string Color { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }

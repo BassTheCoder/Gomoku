@@ -1,4 +1,5 @@
 ﻿using Gomoku.ViewModels;
+using System;
 using System.Windows;
 
 namespace Gomoku.Views
@@ -30,7 +31,7 @@ namespace Gomoku.Views
 
         private void Lobby_Go_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Player1Name.Text != "" && Player2Name.Text != "")
+            if (!String.IsNullOrEmpty(Player1Name.Text) && !String.IsNullOrEmpty(Player2Name.Text))
             {
                 if (Player1Name.Text != Player2Name.Text)
                 {
@@ -47,7 +48,7 @@ namespace Gomoku.Views
             }
             else
             {
-                if (Player1Name.Text == "")
+                if (String.IsNullOrEmpty(Player1Name.Text))
                 {
                     Player1ErrorCase.Text = "Enter Player 1 name!";
                 }
@@ -55,7 +56,7 @@ namespace Gomoku.Views
                 {
                     Player1ErrorCase.Text = "";
                 }
-                if (Player2Name.Text == "")
+                if (String.IsNullOrEmpty(Player2Name.Text))
                 {
                     Player2ErrorCase.Text = "Enter Player 2 name!";
                 }
