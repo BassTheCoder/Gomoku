@@ -20,10 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Gomoku.Contracts\Gomoku.Contracts.csproj" />
     <ProjectReference Include="..\Gomoku.Storage\Gomoku.Storage.csproj" />
   </ItemGroup>
 

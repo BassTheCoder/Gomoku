@@ -78,8 +78,8 @@ namespace Gomoku.Views
             var blackBrush = (Brush)_brushConverter.ConvertFromString("Black");
 
             var response = _gameViewModel.SendAction(Grid.GetRow(button)-1, Grid.GetColumn(button)-1);
-            var backgroundColor = response.CurrentPlayerId == 1 ? blackBrush : whiteBrush;
-            var textColor = response.CurrentPlayerId == 1 ? whiteBrush : blackBrush;
+            var backgroundColor = /*response.CurrentPlayerId == 1 ? blackBrush :*/ whiteBrush;
+            var textColor = /*response.CurrentPlayerId == 1 ? whiteBrush :*/ blackBrush;
             button.Background = backgroundColor;
             button.Foreground = textColor;
             button.Content = response.TurnCountAsText;

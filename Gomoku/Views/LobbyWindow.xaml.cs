@@ -37,7 +37,7 @@ namespace Gomoku.Views
                 {
                     this.Close();
                     GameWindow gameWindow = new GameWindow(_gameViewModel);
-                    _gameViewModel.LoadPlayers();
+                    //_gameViewModel.LoadPlayers();
                     gameWindow.ShowDialog();
                 }
                 else

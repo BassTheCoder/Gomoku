@@ -19,8 +19,8 @@ namespace Gomoku.WebApi.Services
         public GameService()
         {
             _gameBoard = new GameBoard();
-            Player1 = new Player() { Id = 1 };
-            Player2 = new Player() { Id = 2 };
+            Player1 = new Player() { Id = Guid.NewGuid() };
+            Player2 = new Player() { Id = Guid.NewGuid() };
             CurrentPlayer = Player1;
             TurnCounter = 1;
         }
@@ -38,7 +38,7 @@ namespace Gomoku.WebApi.Services
             bool isGameFinished = IsGameFinished(_gameBoard.Board);
             if (!isGameFinished)
             {
-                turnResponse.NextPlayerId = CurrentPlayer.Id == 1 ? 2 : 1;
+                turnResponse.NextPlayerId = turnResponse.NextPlayerId;
 
                 CurrentPlayer = CurrentPlayer == Player1 ? Player2 : Player1;
             }
@@ -56,7 +56,7 @@ namespace Gomoku.WebApi.Services
 
         public void UpdateBoardState(int row, int column)
         {
-            _gameBoard.Board[row, column] = CurrentPlayer.Id;
+            _gameBoard.Board[row, column] = 1;//CurrentPlayer.Id;
         }
 
         private bool IsGameFinished(int[,] boardState)

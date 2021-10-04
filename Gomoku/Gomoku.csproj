@@ -10,4 +10,8 @@
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gomoku.Contracts\Gomoku.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

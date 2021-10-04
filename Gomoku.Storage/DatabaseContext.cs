@@ -10,12 +10,9 @@ namespace Gomoku.Storage
 {
     public class DatabaseContext : DbContext
     {
+        public DatabaseContext(DbContextOptions<DatabaseContext> optionsBuilder) : base(optionsBuilder) { }
+
         public DbSet<Player> Players { get; set; }
         public DbSet<GameTurn> GameTurns { get; set; }
-
-        public DatabaseContext(DbContextOptions<DatabaseContext> optionsBuilder) : base(optionsBuilder)
-        {
-            
-        }
     }
 }
