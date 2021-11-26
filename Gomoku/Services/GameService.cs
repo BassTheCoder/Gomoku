@@ -106,15 +106,12 @@ namespace Gomoku.Services
 
         private bool IsGameFinished(int[,] boardState)
         {
-            return DidTheGameTie() ? true : DidSomeoneWin(boardState);
+            return DidTheGameTie() || AreWinConditionsMet(boardState);
         }
 
-        private bool DidTheGameTie()
-        {
-            return TurnCounter == _turnLimit;
-        }
+        private bool DidTheGameTie() => TurnCounter == _turnLimit;
 
-        private bool DidSomeoneWin(int[,] boardState)
+        private bool AreWinConditionsMet(int[,] boardState)
         {
             int player1InARow = 0;
             int player2InARow = 0;
