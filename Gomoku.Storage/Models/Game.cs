@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gomoku.Storage.Models
 {
-    class Game
+    public class Game
     {
         public Guid Id { get; set; }
         public GameBoard GameBoard { get; set; }

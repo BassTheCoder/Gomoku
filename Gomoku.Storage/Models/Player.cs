@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gomoku.Storage.Models
 {
-    public class Player
+    public class Player : EntityBase
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
