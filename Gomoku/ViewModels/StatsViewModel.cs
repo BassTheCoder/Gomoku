@@ -1,4 +1,4 @@
-﻿using Gomoku.Contracts.Models;
+﻿using Gomoku.Contracts.Responses;
 using Gomoku.Interfaces;
 using Gomoku.Services;
 using System.Collections.ObjectModel;
@@ -15,6 +15,7 @@ namespace Gomoku.ViewModels
             _statisticsService = new StatisticsService();
             PlayersCollection = new ObservableCollection<PlayerResponse>();
             var playersList = _statisticsService.GetPlayersData();
+
             if (playersList != null)
             {
                 foreach (var player in playersList)

@@ -1,7 +1,5 @@
-﻿using Gomoku.Contracts.Models;
+﻿using Gomoku.Contracts.Responses;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Gomoku.Interfaces
 {

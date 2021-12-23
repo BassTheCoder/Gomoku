@@ -1,9 +1,7 @@
-﻿using Gomoku.Contracts.Models;
+﻿using Gomoku.Contracts.Responses;
 using Gomoku.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 
 namespace Gomoku.Services
 {

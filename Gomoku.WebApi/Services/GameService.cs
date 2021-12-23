@@ -1,8 +1,5 @@
 ﻿using Gomoku.WebApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Gomoku.WebApi.Services
 {
@@ -61,7 +58,7 @@ namespace Gomoku.WebApi.Services
 
         private bool IsGameFinished(int[,] boardState)
         {
-            return DidTheGameTie() ? true : DidSomeoneWin(boardState);
+            return DidTheGameTie() || DidSomeoneWin(boardState);
         }
 
         private bool DidTheGameTie()
@@ -73,6 +70,7 @@ namespace Gomoku.WebApi.Services
         {
             int player1InARow = 0;
             int player2InARow = 0;
+
             for (int row = 0; row < 15; row++)
             {
                 for (int column = 0; column <= 10; column++)
@@ -91,6 +89,7 @@ namespace Gomoku.WebApi.Services
                     player2InARow = 0;
                 }
             }
+
             for (int column = 0; column < 15; column++)
             {
                 for (int row = 0; row <= 10; row++)
@@ -109,6 +108,7 @@ namespace Gomoku.WebApi.Services
                     player2InARow = 0;
                 }
             }
+
             for (int row = 0; row <= 10; row++)
             {
                 for (int column = 10; column >= 0; column--)
@@ -127,6 +127,7 @@ namespace Gomoku.WebApi.Services
                     player2InARow = 0;
                 }
             }
+
             for (int column = 0; column <= 10; column++)
             {
                 for (int row = 0; row <= 10; row++)
@@ -145,6 +146,7 @@ namespace Gomoku.WebApi.Services
                     player2InARow = 0;
                 }
             }
+
             return false;
         }
     }

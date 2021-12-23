@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Gomoku.Contracts.Models
+namespace Gomoku.Contracts.Responses
 {
     public class PlayerResponse
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int Ties { get; set; }

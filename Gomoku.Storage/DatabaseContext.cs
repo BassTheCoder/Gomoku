@@ -1,10 +1,5 @@
 ﻿using Gomoku.Storage.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gomoku.Storage
 {
@@ -12,7 +7,7 @@ namespace Gomoku.Storage
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> optionsBuilder) : base(optionsBuilder) { }
 
-        public DbSet<Player> Players { get; set; }
-        public DbSet<GameTurn> GameTurns { get; set; }
+        public DbSet<Player> Players => Set<Player>();
+        public DbSet<GameTurn> GameTurns => Set<GameTurn>();
     }
 }

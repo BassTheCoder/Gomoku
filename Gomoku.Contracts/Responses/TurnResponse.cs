@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Gomoku.Contracts.Models
+﻿namespace Gomoku.Contracts.Responses
 {
     public class TurnResponse
     {
