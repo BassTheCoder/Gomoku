@@ -1,11 +1,11 @@
-﻿using Gomoku.Contracts.Models;
+﻿using Gomoku.Contracts.Inputs;
+using Gomoku.Contracts.Responses;
 using Gomoku.Storage;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Gomoku.WebApi.Controllers
 {
@@ -18,11 +18,45 @@ namespace Gomoku.WebApi.Controllers
         {
             _databaseContext = databaseContext;
         }
-        // GET: PlayersController
+
+        // GET: /players
         [HttpGet]
         public ActionResult<ICollection<PlayerResponse>> Index()
         {
             return Ok(_databaseContext.Players.ToList());
+            //HTTP 200
+        }
+
+        // Get: /players/{id}
+        [HttpGet]
+        [Route("{id:guid}")]
+        public ActionResult<PlayerResponse> Get(Guid id)
+        {
+            return Ok(new PlayerResponse());
+        }
+
+        [HttpPost]
+        public ActionResult Create(PlayerInput playerInput)
+        {
+            return new CreatedResult("/test", null);
+            //HTTP 201
+        }
+
+        // PATCH /players/{id}
+        [HttpPatch]
+        [Route("{id:guid}")]
+        public ActionResult Update(string playerInput, Guid id)
+        {
+            //Update player
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("{id:guid}")]
+        public ActionResult Delete(Guid id)
+        {
+            return NoContent();
+            //204
         }
     }
 }

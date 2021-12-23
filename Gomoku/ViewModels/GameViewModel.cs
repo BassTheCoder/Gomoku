@@ -1,4 +1,4 @@
-﻿using Gomoku.Contracts.Models;
+﻿using Gomoku.Contracts.Responses;
 using Gomoku.Interfaces;
 using Gomoku.Services;
 using PropertyChanged;
